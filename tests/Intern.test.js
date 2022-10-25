@@ -20,7 +20,7 @@ describe("Intern", () => {
     describe("getSchool", () => {
         it("should return the intern's school", () => {
             const intern = new Intern("Amy", 1, "schumer@gmail.com", "UC Berkeley")
-            expect(intern.getGithub()).toEqual("UC Berkeley")
+            expect(intern.getSchool()).toEqual("UC Berkeley")
         })
     })
 

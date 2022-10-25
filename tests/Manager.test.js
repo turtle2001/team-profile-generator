@@ -17,13 +17,6 @@ describe("Manager", () => {
         })
     })
 
-    describe("getSchool", () => {
-        it("should return the manager's officeNumber", () => {
-            const manager = new Manager("Amy", 1, "schumer@gmail.com", NaN)
-            expect(manager.getGithub()).toEqual("100")
-        })
-    })
-
     describe("getRole", () => {
         it("should return the manager's role", () => {
             const manager = new Manager("Amy", 1, "schumer@gmail.com", NaN)

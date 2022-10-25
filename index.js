@@ -1,8 +1,7 @@
-const Manager = require('./lib/Manager')
-const Engineer = require('./lib/Engineer')
-const Intern = require('./lib/Intern')
-const inquirer = require('inquirer')
-//const { exit } = require("process");
+import Manager from './lib/Manager.js'
+import Engineer from './lib/Engineer.js'
+import Intern from './lib/Intern.js'
+import inquirer from 'inquirer'
 //const generateHTML = require("./dist/generateHTML")
 
 var employees = [];
@@ -42,7 +41,7 @@ function nextAction() {
                 type: "list",
                 message: "What would you like to do next?",
                 choices: ['Add an engineer', 'Add an intern', 'Finished building team'],
-                name: choice
+                name: "choice"
             },
         ])
         .then((response) => {
@@ -118,3 +117,5 @@ function addIntern() {
 function exit() {
     generateHTML(employees)
 }
+
+addManager();
