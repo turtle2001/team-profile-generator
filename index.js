@@ -2,7 +2,7 @@ const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 const inquirer = require("inquirer");
-const { exit } = require("process");
+//const { exit } = require("process");
 //const generateHTML = require("./dist/generateHTML")
 
 var employees = [];
@@ -28,16 +28,14 @@ function addManager() {
             },
         ])
         .then(({ name, id, email, office }) => {
-            const manager = new Manager(name, id, email, office);
-            employees.push(manager);
-            selectEmployee();
+            const manager = new Manager(name, id, email, office)
+            employees.push(manager)
+            nextAction()
         })
-        .catch((err) => {
-            console.error(err.message)
-        })
+        .catch((err) => console.error(err.message))
 }
 
-function selectEmployee() {
+function nextAction() {
     inquirer
         .prompt([
             {
@@ -82,13 +80,11 @@ function addEngineer() {
             },
         ])
         .then(({ name, id, email, github }) => {
-            const engineer = new Manager(name, id, email, github);
-            employees.push(engineer);
-            selectEmployee();
+            const engineer = new Engineer(name, id, email, github)
+            employees.push(engineer)
+            nextAction()
         })
-        .catch((err) => {
-            console.error(err.message)
-        })
+        .catch((err) => console.error(err.message))
 }
 
 function addIntern() {
@@ -112,11 +108,13 @@ function addIntern() {
             },
         ])
         .then(({ name, id, email, school }) => {
-            const school = new Manager(name, id, email, school);
-            employees.push(school);
-            selectEmployee();
+            const intern = new Intern(name, id, email, school)
+            employees.push(intern)
+            nextAction();
         })
-        .catch((err) => {
-            console.error(err.message)
-        })
+        .catch((err) => console.error(err.message))
+}
+
+function exit() {
+    generateHTML(employees)
 }
