@@ -1,7 +1,7 @@
-const Manager = require("./lib/Manager")
-const Engineer = require("./lib/Engineer")
-const Intern = require("./lib/Intern")
-const inquirer = require("inquirer");
+const Manager = require('./lib/Manager')
+const Engineer = require('./lib/Engineer')
+const Intern = require('./lib/Intern')
+const inquirer = require('inquirer')
 //const { exit } = require("process");
 //const generateHTML = require("./dist/generateHTML")
 
