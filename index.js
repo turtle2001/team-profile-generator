@@ -153,7 +153,8 @@ function generateHTML(employees) {
 }
 
 function generateCard(employee) {
-    return `
+    if (employee.getRole() == 'Engineer')
+        return `
 <div class="col-4">
     <div class="card m-2 shadow">
         <div class="card-header bg-primary text-white">
@@ -164,7 +165,26 @@ function generateCard(employee) {
             <div class="list-group">
                 <li class="list-group-item">ID: ${employee.getId()}</li>
                 <li class="list-group-item">Email: <a
-                        href="email: ${employee.getEmail()}">${employee.getEmail()}</a> </li>
+                   href="mailto: ${employee.getEmail()}">${employee.getEmail()}</a> </li>
+                <li class="list-group-item">${employee.getExtraName()}: <a href="https://github.com/${employee.getExtraInfo()}">${employee.getExtraInfo()}</li>
+            </div>
+        </div>
+    </div>
+</div>
+    `
+    else
+        return `
+<div class="col-4">
+    <div class="card m-2 shadow">
+        <div class="card-header bg-primary text-white">
+            <h4>${employee.getName()}</h4>
+            <h5><i class="fa-solid fa-mug-hot"></i>${employee.getRole()}</h5>
+        </div>
+        <div class="card-body bg-light">
+            <div class="list-group">
+                <li class="list-group-item">ID: ${employee.getId()}</li>
+                <li class="list-group-item">Email: <a
+                        href=mailto: "${employee.getEmail()}">${employee.getEmail()}</a> </li>
                 <li class="list-group-item">${employee.getExtraName()}: ${employee.getExtraInfo()}</li>
             </div>
         </div>
