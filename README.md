@@ -1,7 +1,7 @@
 # Team Profile Generator
 
 ## Description
-The goal of this project was to build a node.js app that takes in information about employees and generates a webpage based on the input. Each employee is stored in an employee object with various sub-classes.
+The goal of this project was to build a node.js app that takes in information about employees and generates a webpage based on the input. Each employee is stored in an employee object with various sub-classes. The info stored creates the necessary text to display on the page.
 
 ## Installation
 ```
@@ -18,7 +18,7 @@ Generated HTML will be in the dist folder.
 npm run test
 ```
 
-## [Demo](https://drive.google.com/file/d/10nC6AvoDr4S_dBgD227-E93crqNg1L5c/view)
+## [Demo](https://drive.google.com/file/d/1DmiE7Ff28SpG1P8zylef4uHMsAyPFyek/view)
 
 ## Code Snippet
 This snippet creates the Intern object that extends Employee.
