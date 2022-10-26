@@ -23,4 +23,18 @@ describe("Manager", () => {
             expect(manager.getRole()).toEqual("Manager")
         })
     })
+
+    describe("getExtraName", () => {
+        it("should return the manager's role", () => {
+            const manager = new Manager("Amy", 1, "schumer@gmail.com", 2)
+            expect(manager.getExtraName()).toEqual("Office Number")
+        })
+    })
+
+    describe("getExtraInfo", () => {
+        it("should return the manager's role", () => {
+            const manager = new Manager("Amy", 1, "schumer@gmail.com", 2)
+            expect(manager.getExtraInfo()).toEqual(2)
+        })
+    })
 })

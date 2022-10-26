@@ -30,4 +30,18 @@ describe("Intern", () => {
             expect(intern.getRole()).toEqual("Intern")
         })
     })
+
+    describe("getExtraName", () => {
+        it("should return the intern's role", () => {
+            const intern = new Intern("Amy", 1, "schumer@gmail.com", "UC Berkeley")
+            expect(intern.getExtraName()).toEqual("School")
+        })
+    })
+
+    describe("getExtraInfo", () => {
+        it("should return the intern's role", () => {
+            const intern = new Intern("Amy", 1, "schumer@gmail.com", "UC Berkeley")
+            expect(intern.getExtraInfo()).toEqual("UC Berkeley")
+        })
+    })
 })

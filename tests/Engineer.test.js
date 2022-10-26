@@ -30,4 +30,18 @@ describe("Engineer", () => {
             expect(engineer.getRole()).toEqual("Engineer")
         })
     })
+    
+    describe("getExtraName", () => {
+        it("should return the engineer's role", () => {
+            const engineer = new Engineer("Amy", 1, "schumer@gmail.com", "amyschumer999")
+            expect(engineer.getExtraName()).toEqual("Github")
+        })
+    })
+    
+    describe("getExtraInfo", () => {
+        it("should return the engineer's role", () => {
+            const engineer = new Engineer("Amy", 1, "schumer@gmail.com", "amyschumer999")
+            expect(engineer.getExtraInfo()).toEqual("amyschumer999")
+        })
+    })
 })
