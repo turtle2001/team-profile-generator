@@ -4,6 +4,7 @@ import Intern from './lib/Intern.js'
 import inquirer from 'inquirer'
 import fs from 'fs'
 
+//stores employee objects
 let employees = [];
 
 function addManager() {
@@ -28,10 +29,10 @@ function addManager() {
         ])
         .then(({ name, id, email, office }) => {
             const manager = new Manager(name, id, email, office)
-            employees.push(manager)
+            employees.push(manager) //adds employee to employees list
             nextAction()
         })
-        .catch((err) => console.error(err.message))
+        .catch((err) => { console.error(err.message); addManager() })
 }
 
 function nextAction() {
@@ -83,7 +84,7 @@ function addEngineer() {
             employees.push(engineer)
             nextAction()
         })
-        .catch((err) => console.error(err.message))
+        .catch((err) => { console.error(err.message); addEngineer() })
 }
 
 function addIntern() {
@@ -111,7 +112,7 @@ function addIntern() {
             employees.push(intern)
             nextAction();
         })
-        .catch((err) => console.error(err.message))
+        .catch((err) => { console.error(err.message); addIntern() })
 }
 
 function generateHTML(employees) {
@@ -153,6 +154,7 @@ function generateHTML(employees) {
 }
 
 function generateCard(employee) {
+    //engineer card needs an extra link
     if (employee.getRole() == 'Engineer')
         return `
 <div class="col-4">

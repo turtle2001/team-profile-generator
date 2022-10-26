@@ -4,11 +4,24 @@
 The goal of this project was to build a node.js app that takes in information about employees and generates a webpage based on the input. Each employee is stored in an employee object with various sub-classes.
 
 ## Installation
-Node.js using the inquirer and jest packages
+```
+npm install
+```
+## Usage
+```sh
+node index.js
+```
+Generated HTML will be in the dist folder.
+
+## Test
+```sh
+npm run test
+```
 
 ## [Demo](https://drive.google.com/file/d/10nC6AvoDr4S_dBgD227-E93crqNg1L5c/view)
 
 ## Code Snippet
+This snippet creates the Intern object that extends Employee.
 ```JavaScript
 import Employee from "./Employee.js";
 //const Employee = require("./Employee");
