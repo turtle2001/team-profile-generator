@@ -5,15 +5,15 @@ describe("Engineer", () => {
         it("should create an object with a name, id, and email, and github id", () => {
             const engineer = new Engineer("Abe", 1, "iamabe@gmail.com", "iamabe999")
 
-            expect(engineer.name).toEqual("Abe");
+            expect(engineer.names).toEqual("Abe");
             expect(engineer.id).toEqual(1);
             expect(engineer.email).toEqual("iamabe@gmail.com")
             expect(engineer.github).toEqual("iamabe999")
         })
 
         it("should throw an error if github id is missing", () => {
-            const engineer = new Engineer("Abe", 1, "a@gmail.com", "")
-            expect(employee).toThrow()
+            const engineer = () => new Engineer("Abe", 1, "a@gmail.com", "")
+            expect(engineer).toThrow()
         })
     })
 

@@ -5,21 +5,21 @@ describe("Manager", () => {
         it("should create an object with a name, id, and email, and officeNumber", () => {
             const manager = new Manager("Abe", 1, "iamabe@gmail.com", 100)
 
-            expect(manager.name).toEqual("Abe");
+            expect(manager.names).toEqual("Abe");
             expect(manager.id).toEqual(1);
             expect(manager.email).toEqual("iamabe@gmail.com")
             expect(manager.officeNumber).toEqual(100)
         })
 
         it("should throw an error if officeNumber is missing", () => {
-            const manager = new Manager("Abe", 1, "a@gmail.com", NaN)
-            expect(employee).toThrow()
+            const manager = () => new Manager("Abe", 1, "a@gmail.com", NaN)
+            expect(manager).toThrow()
         })
     })
 
     describe("getRole", () => {
         it("should return the manager's role", () => {
-            const manager = new Manager("Amy", 1, "schumer@gmail.com", NaN)
+            const manager = new Manager("Amy", 1, "schumer@gmail.com", 2)
             expect(manager.getRole()).toEqual("Manager")
         })
     })
